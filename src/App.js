@@ -14,7 +14,7 @@ class App extends Component {
           <p>
             Enter room code:
           </p>
-          <form method="post" action="submit.php">
+          <form method="post">
             <input type="text" name="room" />
             <input type="submit" />
           </form>
