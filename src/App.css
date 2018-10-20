@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -9,7 +14,10 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  opacity: .5;
+  /* min-height: 100vh; */
+  width: 15%;
+  height: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,8 +26,38 @@
   color: white;
 }
 
+.App-header h1 {
+  min-height: 300px;
+  font-size: 2em;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+canvas {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.Entry {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.Hosts {
+  margin: 50px;
+  border: 4px solid;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.Users {
+  margin: 50px;
+  border: 4px solid;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 @keyframes App-logo-spin {
@@ -30,3 +68,39 @@
     transform: rotate(360deg);
   }
 }
+
+
+/***** FAILED CODE SNIPPETS *****/
+/* canvas {
+  display: block;
+}
+
+/* Particle container. */
+/*#particle-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+} */
+
+/* .particle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+@for $i from 1 through 30 {
+    @keyframes particle-animation-#{$i} {
+        100% {
+            transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+        }
+    }
+
+    .particle:nth-child(#{$i}){
+        animation: particle-animation-#{$i} 60s infinite;
+        $size: random(5) + 5 + px;
+        opacity: random(100)/100;
+        height: $size;
+        width: $size;
+        animation-delay: -$i * .2s;
+        transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+        background: hsl(random(360), 70%, 50%);
+} */
