@@ -5,6 +5,8 @@ import Party from './components/Party';
 
 import './App.css';
 
+import Example from './components/Example';
+
 class App extends Component {
   render() {
     return (
