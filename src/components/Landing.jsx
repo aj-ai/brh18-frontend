@@ -1,16 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import api from "../utils/api";
 
-import '../App.css';
+import "../App.css";
 
-import Example from './Example';
+import Example from "./Example";
 
-import ButtonExampleButton from '../Button';
-import 'semantic-ui-css/semantic.min.css';
-import { Input, Form, Button } from 'semantic-ui-react';
+import ButtonExampleButton from "../Button";
+import "semantic-ui-css/semantic.min.css";
+import { Input, Form, Button } from "semantic-ui-react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+class Landing extends Component {
+  
+  handleHost = () => {
+    api.login();
+  };
 
-class App extends Component {
   render() {
     return (
       <div className="App">
@@ -19,16 +24,13 @@ class App extends Component {
 
           <div className="Entry">
             <div className="Hosts">
-              <p>
-                Create a room:
-              </p>
-              <Button content="Create Room" />
+              <p>Create a room:</p>
+
+              <Button content="Create Room" onClick={this.handleHost} />
             </div>
 
             <div className="Users">
-              <p>
-                Enter room code:
-              </p>
+              <p>Enter room code:</p>
 
               <Form fluid>
                 <Form.Input placeholder="Room code..." name="room" />
@@ -42,4 +44,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Landing;
