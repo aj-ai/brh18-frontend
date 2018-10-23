@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 
 import '../App.css';
@@ -8,9 +9,31 @@ import ButtonExampleButton from '../Button';
 import 'semantic-ui-css/semantic.min.css';
 import { Input, Form, Button } from 'semantic-ui-react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import React from 'react';
+import {
+    
+} from 'semantic-ui-react';
+import qs from 'query-string';
+import axios from 'axios';
+import api from '../utils/api';
 
 class Host extends Component {
+  constructor(props) {
+        super(props);
+    }
+
+    componentDidMount = () => {
+        var {token} = qs.parse(this.props.location.search);
+        api.setAuthToken(token);
+        
+        api.getPlaylists().then((res) => {
+            console.log(res);
+        });
+    }
+
+    render() {
+        return (<h1>Host</h1>);
+    }
 
   render() {
     var SpotifyWebApi = require('spotify-web-api-node');
@@ -72,3 +95,4 @@ class Host extends Component {
 }
 
 export default Host;
+

@@ -6,7 +6,12 @@ export default class Party extends React.Component {
         super(props);
 
         this.state = {
+
             partyConnection: api.beginSocketConnection("http://localhost:3001/"),
+
+            partyId: this.props.partyId,
+            socketConnection: api.beginSocketConnection("http://localhost:3001/"),
+
             pollOpen: false,
             hasVoted: false,
         }
