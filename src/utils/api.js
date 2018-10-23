@@ -5,6 +5,13 @@ const beginSocketConnection = (address) => {
     openSocket(address);
 }
 
+export default {
+    beginSocketConnection,
+    login, 
+    setAuthToken,
+    getPlaylists
+}
+
 const login = () => {
     axios.get('http://localhost:3001/auth/spotify').then((res) => {
     });
@@ -19,9 +26,5 @@ const getPlaylists = async (component) => {
     return await res.json();
 }
 
-export default {
-    beginSocketConnection,
-    login, 
-    setAuthToken,
-    getPlaylists
-}
+
+
